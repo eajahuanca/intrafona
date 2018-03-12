@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>BizPage Bootstrap Template</title>
+    <title>Intranet</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -20,9 +20,7 @@
     <link href="{{ asset('plugin/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('plugin/css/style.css') }}" rel="stylesheet">
 </head>
-
 <body>
-
     <!-- Header -->
     <header id="header">
         <div class="container-fluid">

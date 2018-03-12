@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Intranet-Admin</title>
+    <link href="{{ asset('plugin/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('plugin/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
