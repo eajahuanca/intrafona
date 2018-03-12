@@ -55,6 +55,36 @@ return [
             'visibility' => 'public',
         ],
 
+        'usuario' => [
+            'driver' => 'local',
+            'root' => public_path('archivo/usuario'),
+        ],
+
+        'documento' => [
+            'driver' => 'local',
+            'root' => public_path('archivo/documento'),
+        ],
+
+        'evento' => [
+            'driver' => 'local',
+            'root' => public_path('archivo/evento'),
+        ],
+
+        'banner' => [
+            'driver' => 'local',
+            'root' => public_path('archivo/banner'),
+        ],
+
+        'acceso' => [
+            'driver' => 'local',
+            'root' => public_path('archivo/acceso'),
+        ],
+
+        'ministerio' => [
+            'driver' => 'local',
+            'root' => public_path('archivo/ministerio'),
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),
