@@ -1591,6 +1591,7 @@ body.mobile-nav-active #mobile-nav-toggle {
     margin-top: 4.5em;
     color: #ffffff;
     padding: 20px 15px 4px 15px;
+    cursor: default;
 }
 
 #happy.happy-scrolled {
@@ -1604,45 +1605,27 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #happy h3 {
     text-align: center;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 #happy .testimonial-item img {
-    width: 100px;
+    width: 150px;
     border: 4px solid #ffffff;
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
 }
 
-#happy .testimonial-item h3 {
-    font-size: 9px;
-    font-weight: bold;
-    text-align: center;
+#happy .testimonial-item img:hover {
+    width: 152px;
+    cursor: pointer;
 }
 
-@media (min-width: 1024px) {
-    #happy {
-        margin-left: 1em;
-    }
-    #happy h3 {
-        text-align: center;
-        font-size: 10px;
-        font-weight: bold;
-    }
-    #happy .testimonial-item img {
-        width: 80px;
-        border: 3px solid #ffffff;
-        border-radius: 50%;
-        -moz-border-radius: 50%;
-        -webkit-border-radius: 50%;
-    }
-    #happy .testimonial-item h3 {
-        font-size: 8px;
-        font-weight: bold;
-        text-align: center;
-    }
+#happy .testimonial-item h3 {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -1655,7 +1638,7 @@ body.mobile-nav-active #mobile-nav-toggle {
         font-weight: bold;
     }
     #happy .testimonial-item img {
-        width: 70px;
+        width: 110px;
         border: 2px solid #ffffff;
         border-radius: 50%;
         -moz-border-radius: 50%;
