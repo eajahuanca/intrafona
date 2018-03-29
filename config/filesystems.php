@@ -85,6 +85,11 @@ return [
             'root' => public_path('archivo/ministerio'),
         ],
 
+        'comunicados' => [
+            'driver' => 'local',
+            'root' => public_path('archivo/comunicados'),
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),

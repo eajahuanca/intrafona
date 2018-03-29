@@ -46,6 +46,8 @@ class Documento extends Model
             $this->attributes['doc_nombre'] = 'archivo/documento/'.$nuevoNombre;
             $storage = Storage::disk('documento')->put($nuevoNombre, \File::get($archivo));
             $this->attributes['doc_nombreoriginal'] = $archivo->getClientOriginalName();
+            $this->attributes['doc_tamanio'] = $archivo->getClientSize();
+            $this->attributes['doc_tipo'] = $archivo->getClientOriginalExtension();
         }
     }    
 }

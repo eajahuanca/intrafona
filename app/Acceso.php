@@ -20,7 +20,7 @@ class Acceso extends Model
         'idusuarioregistra',
         'idusuariomodifica',
         'created_at',
-        'upated_at'
+        'updated_at'
     ];
     public function userRegistra(){
         return $this->belongsTo('App\User','idusuarioregistra','id');

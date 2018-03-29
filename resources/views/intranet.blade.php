@@ -50,17 +50,16 @@
     </header>
     <!-- #header -->
     <!--Cumpleañeros-->
-    @if($happy != 0)
+    @if($happy)
+    @include('fechas')
     <div id="happy">
         <h3>Cumpleañeros</h3>
-        <div class="testimonial-item">
-            <img src="{{ asset('plugin/img/testimonial-1.jpg') }}" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-        </div>
-        <div class="testimonial-item">
-            <img src="{{ asset('plugin/img/testimonial-1.jpg') }}" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-        </div>
+        @foreach ($happy as $itemHappy)
+            <div class="testimonial-item">
+                <img src="{{ asset($itemHappy->us_foto) }}" class="testimonial-img" title="{{ $itemHappy->us_nombrecompleto }}">
+                <h3>{{ $itemHappy->us_nombrecompleto }}<br>{{ fechaCumpleano($itemHappy->us_fechanacimiento) }}</h3>
+            </div>
+        @endforeach
     </div>
     @endif
     <!--#Cumpleañeros-->
@@ -102,7 +101,7 @@
         </div>
     </section>
     <!-- #intro -->
-
+    <?php error_reporting(0); ?>
     <main id="main">
 
         <!-- Featured Services Section -->
@@ -406,6 +405,22 @@
     <!-- #footer -->
 
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <img src="{{ asset($comunicado->com_archivo)  }}" height="{{ $comunicado->com_height }}px" width="{{ $comunicado->com_width }}px">
+                <!--<div class="modal-header">
+                    <h3>Comunicado</h3>
+                </div>
+                <div class="modal-body">
+                </div>
+                -->
+                <div class="modal-footer">
+                    <a href="#" data-dismiss="modal" class="btn btn-danger">Cerrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="{{ asset('plugin/lib/jquery/jquery.min.js') }}"></script>
@@ -422,6 +437,14 @@
     <script src="{{ asset('plugin/lib/lightbox/js/lightbox.min.js') }}"></script>
     <script src="{{ asset('plugin/lib/touchSwipe/jquery.touchSwipe.min.js') }}"></script>
     <script src="{{ asset('plugin/js/main.js') }}"></script>
+    <script>
+        $(document).ready(function()
+        {
+            @if($comunicado)
+            $("#mostrarmodal").modal("show");
+            @endif
+        });
+    </script>    
 </body>
 
 </html>

@@ -13,7 +13,9 @@ use App\Mision;
 use App\Objetivo;
 use App\User;
 use App\Vision;
+use App\Comunicado;
 use Carbon\Carbon;
+use DB;
 
 class IntranetController extends Controller
 {
@@ -33,8 +35,10 @@ class IntranetController extends Controller
             $superiores = User::where('us_estado','=',1)->where('us_jefes','<>','NORMAL')->get();
             $contacto = Contacto::where('con_estado','=',1)->orderBy('created_at','DESC')->first();
             $ministerio = Ministerio::where('min_estado','=',1)->orderBy('created_at','DESC')->get();
-            $happy = 0;
-            return view('intranet', compact('banner','acceso','mision','vision','objetivo','documento','formulario','superiores','contacto','ministerio','happy'));
+            $comunicado = Comunicado::where('com_estado','=',1)->orderBy('created_at','DESC')->first();
+            $monthSystem = date('m');
+            $happy = DB::table("users")->whereMonth('us_fechanacimiento', '=', $monthSystem)->get();
+            return view('intranet', compact('banner','acceso','mision','vision','objetivo','documento','formulario','superiores','contacto','ministerio','happy','comunicado'));
 
         }catch(\Exception $ex){
             dd('póngase en contacto con el administrador del sistema');

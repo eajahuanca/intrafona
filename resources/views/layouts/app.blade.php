@@ -28,13 +28,14 @@
                         &nbsp;
                     </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav">
                         @if (Auth::guest())
                             <li><a href="{{ url('/') }}">INTRANET</a></li>
                         @else
-                            <li class="dropdown">
+                            @include('layouts.menu')
+                            <li class="dropdown pull-right">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->us_nombrecompleto }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
@@ -60,6 +61,12 @@
         @yield('content')
     </div>
 
+    <footer class="page-footer font-small blue pt-4 mt-4">
+        <div class="footer-copyright py-3 text-center">
+            © 2018 Copyright:
+            <a href="."> EAC - Unidad de Tecnología </a>
+        </div>
+    </footer>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
